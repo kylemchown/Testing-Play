@@ -5,12 +5,23 @@
 # Home page
 GET     /                           controllers.Application.index
 
+
+GET         /people                 controllers.Application.listPeople
+POST        /people                 controllers.Application.createPerson
+
+
+GET     /list                           controllers.Application.listTest
+
+
+GET     /abc                           controllers.Application.notFound
+
 GET     /toHome                           controllers.Application.toHome
 
 # Test page
 GET     /test                           controllers.Application.copyindex
 
 # Test page
+GET     /test/a                           controllers.Application.badReq
 GET     /test/:id                           controllers.Application.copyind(id: Long)
 GET     /test/                           controllers.Application.copyind(id: Long ?= 1)
 

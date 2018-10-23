@@ -1,0 +1,26 @@
+@(people: Seq[Person], form: Form[Person])(implicit messages: Messages)
+
+@main("People") {
+    <h1>People</h1>
+    <table>
+        <thead>
+            <tr><th>First Name</th><th>Last Name</th></tr>
+        </thead>
+        <tbody>
+        @for(person <- people) {
+            <tr><td>@person.fname</td><td>@person.lname</td></tr>
+        }
+        </tbody>
+    </table>
+
+    <hr/>
+
+    @helper.form(routes.Application.createPerson()) {
+        @* an example of how we can pass additional arguments for the helper
+        in this CD example having '_showConstraints -> false will hide the requirement Required *@
+        @helper.inputText(form("fname"), '_label -> "First Name", '_showConstraints -> false)
+        @helper.inputText(form("lname"), '_label -> "Last Name" , '_showConstraints -> false)
+        <button type="submit">Create Person</button>
+    }
+
+}
