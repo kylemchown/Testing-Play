@@ -1,6 +1,6 @@
 @(people: Seq[Person], form: Form[Person])(implicit messages: Messages)
 
-@main("People") {
+@main("People") {<h1></h1>}{
     <h1>People</h1>
     <table>
         <thead>
@@ -21,6 +21,9 @@
         @helper.inputText(form("fname"), '_label -> "First Name", '_showConstraints -> false)
         @helper.inputText(form("lname"), '_label -> "Last Name" , '_showConstraints -> false)
         <button type="submit">Create Person</button>
+
     }
+
+    <button onclick="window.location.href='/test'">edydy</button>
 
 }

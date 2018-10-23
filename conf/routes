@@ -5,6 +5,8 @@
 # Home page
 GET     /                           controllers.Application.index
 
+GET     /boot                           controllers.Application.boot
+
 
 GET         /people                 controllers.Application.listPeople
 POST        /people                 controllers.Application.createPerson

@@ -8,6 +8,10 @@ import models.Person
 
 class Application @Inject()(val messagesApi: MessagesApi, environment: play.api.Environment) extends Controller with I18nSupport {
 
+  def boot = Action { implicit request =>
+    Ok(views.html.boot("aa"))
+  }
+
   def listPeople = Action { implicit request =>
     Ok(views.html.listPeople(Person.people, Person.createPersonForm))
   }
